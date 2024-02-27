@@ -1,0 +1,2703 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	
+	<!-- title -->
+	
+	<title>
+	
+		Python笔记 | 
+	 
+	integererer_Notes
+	</title>
+	
+	<!-- keywords,description -->
+	 
+
+	<!-- favicon -->
+	
+	<link rel="shortcut icon" href="https://blog-denglinzhe-com.oss-cn-chengdu.aliyuncs.com/img/202309041206941.ico">
+	
+
+
+	<!-- search -->
+	<script>
+		var searchEngine = "";
+		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
+			searchEngine = "https://www.google.com/search?q=";
+		}
+		var homeHost = "";
+		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
+			homeHost = window.location.host;
+		}
+	</script>
+
+
+
+
+	
+	
+<link rel="stylesheet" href="/hardisonxxx.github.io/css/main.css">
+
+	
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+	
+	
+<link rel="stylesheet" href="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/11.4.0/styles/a11y-light.min.css">
+
+	<!-- 
+<link rel="stylesheet" href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/11.4.0/styles/base16/windows-95.min.css">
+ -->
+	<!-- 
+<link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/11.4.0/styles/tomorrow-night-blue.min.css">
+ -->
+	<!-- 
+<link rel="stylesheet" href="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/11.4.0/styles/vs.min.css">
+ -->
+	<!-- 
+<link rel="stylesheet" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/11.4.0/styles/base16/papercolor-light.min.css">
+ -->
+	<!-- 
+<link rel="stylesheet" href="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/11.4.0/styles/base16/dracula.min.css">
+ -->
+
+	<!-- 
+<script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/clipboard.js/2.0.10/clipboard.min.js"></script>
+ -->
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+	
+<script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/11.4.0/highlight.min.js"></script>
+
+	
+<script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+	
+<script src="/hardisonxxx.github.io/js/main.js"></script>
+
+	
+		
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+
+		
+<script src="https://cdn.jsdelivr.net/npm/valine@v1.5.1/dist/Valine.min.js"></script>
+
+	
+	
+
+	<script>
+	hljs.highlightAll();
+	hljs.initLineNumbersOnLoad();
+	</script>
+
+<style>
+
+	td.hljs-ln-numbers {
+		text-align: center;
+		color: rgb(160, 183, 204);
+		border-right: 1.5px solid rgb(99, 227, 108);
+		vertical-align: top;
+		padding-right: 5px;
+
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		border-bottom: 0px solid;    
+		border-left: 0px solid;    
+		border-top: 0px solid;  
+
+
+	}
+	td.hljs-ln-code {
+		padding-left: 10px;
+		border-bottom: 0px solid;    
+		border-top: 0px solid; 
+		border-right: 0px solid; 
+	}
+
+	code {
+		white-space: pre-wrap;
+		overflow: auto;
+
+	}
+</style>
+	
+
+
+
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+
+<body>
+	
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?ab61945b192c8c894f69bb0485822e85";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+
+<header id="header">
+    <a id="title" href="/hardisonxxx.github.io/" class="logo">integererer_Notes</a>
+
+	<ul id="menu">
+    
+
+    
+
+    
+
+    
+  
+    
+	</ul>
+</header>
+
+	
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="search" placeholder="按回车全站搜索">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										00 编程
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										01 C++
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">
+                     
+										    1 基本语法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/cmakepresets-json%E5%AD%A6%E4%B9%A0/">
+                     
+										    CmakePresets.json学习
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/cmake%E5%AD%A6%E4%B9%A0/">
+                     
+										    Cmake学习
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E7%BC%96%E8%AF%91%E5%99%A8%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3/">
+                     
+										    编译器配置相关
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/">
+                     
+										    类与对象
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										02 Qt
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/qt-pro%E5%B7%A5%E7%A8%8B%E6%96%87%E4%BB%B6/">
+                     
+										    Qt_Pro工程文件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/qt%E5%AE%9E%E8%B7%B5%E3%80%81%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/">
+                     
+										    Qt实践、问题记录
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/qt%E7%A8%8B%E5%BA%8F%E9%80%90%E6%AD%A5%E5%AE%9E%E8%B7%B5/">
+                     
+										    Qt程序逐步实践
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/qt%E7%BB%84%E4%BB%B6/">
+                     
+										    Qt组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">
+                     
+										    基础语法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										03 Python
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/python%E5%AE%9E%E8%B7%B5%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/">
+                     
+										    Python实践问题记录
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file active">
+									<a href="/hardisonxxx.github.io/python%E7%AC%94%E8%AE%B0/">
+                     
+										    Python笔记
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/python%E7%BB%83%E4%B9%A0%E9%A2%98/">
+                     
+										    Python练习题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E4%BD%BF%E7%94%A8python%E6%8F%90%E5%8F%96html%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%9B%BE%E7%89%87%E9%93%BE%E6%8E%A5/">
+                     
+										    使用Python提取html文件中的图片链接
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										04 MATLAB
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E4%BD%BF%E7%94%A8matlab%E5%AE%9E%E7%8E%B0stl%E4%B8%89%E7%BB%B4%E6%96%87%E4%BB%B6%E7%9A%84%E5%B1%95%E7%A4%BA/">
+                     
+										    使用matlab实现stl三维文件的展示
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										05 VTK
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/vtk%E7%9B%B8%E5%85%B3/">
+                     
+										    VTK相关
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										01 数学
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										01 基础
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/log-log%E5%AF%B9%E6%95%B0%E5%9D%90%E6%A0%87/">
+                     
+										    log-log对数坐标
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E5%B8%B8%E7%94%A8%E7%9A%84%E9%BA%A6%E5%85%8B%E5%8A%B3%E6%9E%97%E5%85%AC%E5%BC%8F%EF%BC%88%E4%BD%A9%E4%BA%9A%E8%AF%BA%E4%BD%99%E9%A1%B9%EF%BC%89/">
+                     
+										    常用的麦克劳林公式（佩亚诺余项）
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										02 方程组求解
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E8%A7%A3/">
+                     
+										    最小二乘解
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										03 图像
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E4%B8%89%E6%AC%A1b%E6%A0%B7%E6%9D%A1%E6%8A%80%E6%9C%AF/">
+                     
+										    三次B样条技术
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										02 光学
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										01 基础
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/psd%EF%BC%88%E5%8A%9F%E7%8E%87%E8%B0%B1%E5%AF%86%E5%BA%A6%EF%BC%89/">
+                     
+										    PSD（功率谱密度）
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E5%85%89%E5%AD%A6%E9%9D%A2%E5%9E%8B%E7%9A%84%E6%8C%87%E6%A0%87/">
+                     
+										    光学面型的指标
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E6%8A%9B%E5%85%89/">
+                     
+										    抛光
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E6%B3%A2%E5%89%8D%E4%B8%8E%E6%B3%A2%E5%89%8D%E6%A0%A1%E6%AD%A3/">
+                     
+										    波前与波前校正
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E7%90%83%E9%9D%A2%E4%B8%8E%E9%9D%9E%E7%90%83%E9%9D%A2%E5%85%89%E5%AD%A6%E5%85%83%E4%BB%B6%E5%8C%BA%E5%88%AB/">
+                     
+										    球面与非球面光学元件区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E9%9D%9E%E7%90%83%E9%9D%A2%E5%85%89%E5%AD%A6%E5%85%83%E4%BB%B6/">
+                     
+										    非球面光学元件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										02 检测
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E5%85%89%E5%AD%A6%E5%85%83%E4%BB%B6%E9%9D%A2%E5%9E%8B%E6%A3%80%E6%B5%8B%E6%96%B9%E6%B3%95/">
+                     
+										    光学元件面型检测方法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E8%AF%AF%E5%B7%AE%E9%A2%91%E7%8E%87/">
+                     
+										    误差频率
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E9%9D%9E%E7%90%83%E9%9D%A2%E6%B5%8B%E9%87%8F%E6%96%B9%E6%B3%95/">
+                     
+										    非球面测量方法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										03 保形光学
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E4%BF%9D%E5%BD%A2%E5%85%83%E4%BB%B6-%E5%B1%9E%E6%80%A7%E4%B8%8E%E6%80%A7%E8%83%BD/">
+                     
+										    保形元件_属性与性能
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										03 确定性抛光工艺
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										01 基础
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E5%8D%B7%E7%A7%AF%E5%8E%BB%E9%99%A4%E5%8E%9F%E7%90%86/">
+                     
+										    卷积去除原理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E6%B3%A2%E7%BA%B9%E8%AF%AF%E5%B7%AE/">
+                     
+										    波纹误差
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										02 驻留时间求解
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E9%A9%BB%E7%95%99%E6%97%B6%E9%97%B4%E6%B1%82%E8%A7%A3%E7%AE%97%E6%B3%95%EF%BC%88%E5%8D%B7%E7%A7%AF%E5%8E%BB%E9%99%A4%EF%BC%89/">
+                     
+										    驻留时间求解算法（卷积去除）
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										03 自由曲面抛光
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										01 气囊头相关
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E6%B0%94%E5%9B%8A%E5%A4%B4/">
+                     
+										    气囊头
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										05 离子束
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E7%A6%BB%E5%AD%90%E6%9D%9F%E5%8E%BB%E9%99%A4%E5%87%BD%E6%95%B0%E6%A8%A1%E5%9E%8B/">
+                     
+										    离子束去除函数模型
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E7%A6%BB%E5%AD%90%E6%9D%9F%E6%8A%9B%E5%85%89%E9%80%9A%E8%AF%86%E7%9F%A5%E8%AF%86/">
+                     
+										    离子束抛光通识知识
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										04 五轴控制
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										01 轮廓误差估计
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E7%A9%BA%E9%97%B4%E8%AF%AF%E5%B7%AE%E5%92%8C%E8%BD%AE%E5%BB%93%E8%AF%AF%E5%B7%AE%E7%9A%84%E5%8C%BA%E5%88%AB/">
+                     
+										    空间误差和轮廓误差的区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E8%AE%BA%E6%96%87-%E4%BA%94%E8%BD%B4%E6%95%B0%E6%8E%A7%E6%9C%BA%E5%BA%8A%E7%A9%BA%E9%97%B4%E5%AE%9A%E4%BD%8D%E7%B2%BE%E5%BA%A6%E6%94%B9%E5%96%84%E6%96%B9%E6%B3%95%E7%A0%94%E7%A9%B6%E7%8E%B0%E7%8A%B6/">
+                     
+										    论文_五轴数控机床空间定位精度改善方法研究现状
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E4%BA%94%E8%BD%B4%E6%95%B0%E6%8E%A7%E6%9C%BA%E5%BA%8A%E6%A6%82%E5%BF%B5/">
+                     
+										    五轴数控机床概念
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										05 计算机
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										01 Unix
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/centos%E4%B8%8B%E5%AE%89%E8%A3%85mosquitto/">
+                     
+										    Centos下安装mosquitto
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/linux%E4%B8%8Bctrl-s-%E9%94%81%E5%AE%9A%E8%BE%93%E5%85%A5-vim/">
+                     
+										    Linux下Ctrl+s 锁定输入 vim
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/linux%E4%B8%8B%E6%96%B0%E5%BB%BA%E7%94%A8%E6%88%B7%E4%B9%8B%E5%90%8E%E4%B8%8D%E6%98%BE%E7%A4%BA%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/">
+                     
+										    Linux下新建用户之后不显示用户名和路径问题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/linux%E5%92%8Cmacos%E4%B8%8B%E5%AE%89%E8%A3%85youtubedl/">
+                     
+										    Linux和MacOS下安装youtubedl
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/linux%E5%AD%A6%E4%B9%A0%E4%B8%AD%E4%B8%80%E4%BA%9B%E5%B0%8F%E6%8A%80%E5%B7%A7%EF%BC%88%E5%9C%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E4%BC%9A%E6%85%A2%E6%85%A2%E6%80%BB%E7%BB%93%E6%95%B4%E7%90%86%EF%BC%89/">
+                     
+										    Linux学习中一些小技巧（在学习中会慢慢总结整理）
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/linux%E6%8D%A2ssh%E7%AB%AF%E5%8F%A3%E7%9A%84%E6%96%B9%E6%B3%95/">
+                     
+										    Linux换SSH端口的方法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/linux%E7%9B%AE%E5%BD%95%E4%B8%8E%E8%B7%AF%E5%BE%84/">
+                     
+										    Linux目录与路径
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/m1-mac%E5%AE%89%E8%A3%85homebrew/">
+                     
+										    M1 mac安装HomeBrew
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/mac%E4%B8%8B%E5%AE%89%E8%A3%85brew%E6%8A%A5%E9%94%99/">
+                     
+										    Mac下安装brew报错
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/mac%E4%B8%8B%E5%B0%86homebrew%E6%BA%90%E6%9B%BF%E6%8D%A2%E4%B8%BA%E4%B8%AD%E7%A7%91%E5%A4%A7%E6%BA%90/">
+                     
+										    Mac下将Homebrew源替换为中科大源
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80/">
+                     
+										    MySql数据库基础
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/apt-%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/">
+                     
+										    apt 命令速查
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/centos%E4%B8%8Byum%E7%9A%84%E4%BD%BF%E7%94%A8/">
+                     
+										    centos下yum的使用
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/deepin%E4%B8%8B%E5%AE%89%E8%A3%85kde%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83%EF%BC%8C%E4%BB%A5%E5%8F%8A%E5%9C%A8kde%E4%B8%AD%E8%BF%90%E8%A1%8Cwine%E7%A8%8B%E5%BA%8F/">
+                     
+										    deepin下安装KDE桌面环境，以及在kde中运行wine程序
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/homebrew%E6%8D%A2%E5%9B%BD%E5%86%85%E6%BA%90/">
+                     
+										    homebrew换国内源
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/kali-%E5%AE%89%E8%A3%85googlepinyin%E8%BE%93%E5%85%A5%E6%B3%95/">
+                     
+										    kali 安装googlepinyin输入法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/kali-%E9%A6%96%E6%AC%A1%E8%BF%90%E8%A1%8C%E6%96%87%E5%AD%97%E6%88%90%E6%96%B9%E6%A1%86%E4%B9%B1%E7%A0%81/">
+                     
+										    kali 首次运行文字成方框乱码
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/kali%EF%BC%88linux%EF%BC%89%E6%8D%A2%E5%9B%BD%E5%86%85%E6%BA%90/">
+                     
+										    kali（Linux）换国内源
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/linux%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E4%B8%8E%E7%A3%81%E7%9B%98%E6%A0%BC%E5%BC%8F/">
+                     
+										    linux文件目录与磁盘格式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/linux%E4%B8%8B%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84ipsec-l2tp/">
+                     
+										    linux下搭建一个属于自己的IPsec/L2TP
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%8D%E6%98%BE%E7%A4%BA%E8%B7%AF%E5%BE%84-%E8%80%8C%E6%98%BE%E7%A4%BAbash42%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">
+                     
+										    linux命令行不显示路径_而显示bash42的解决办法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/linux%E7%9A%84%E8%A7%84%E5%88%99%E4%B8%8E%E5%AE%89%E8%A3%85/">
+                     
+										    linux的规则与安装
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/mac-%E4%B8%8B%E4%BD%BF%E7%94%A8pip%E4%B8%B4%E6%97%B6%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85%E5%BA%93%E6%97%B6%E8%A6%81%E4%BD%BF%E7%94%A8%E6%96%B0%E7%9A%84%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F/">
+                     
+										    mac 下使用pip临时国内镜像安装库时要使用新的命令格式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/mac-%E4%B8%8B%E6%9B%B4%E6%94%B9%E6%88%96%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E7%BC%96%E7%A0%81%E7%9A%84%E6%96%B9%E5%BC%8F/">
+                     
+										    mac 下更改或查看文件编码的方式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E4%BF%AE%E6%94%B9grub%E9%BB%98%E8%AE%A4%E5%90%AF%E5%8A%A8%E9%A1%B9/">
+                     
+										    修改grub默认启动项
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E5%9C%A8centos7%E4%B8%AD%E5%AE%89%E8%A3%85yum%E4%B8%AD%E6%B2%A1%E6%9C%89%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%8C%85/">
+                     
+										    在Centos7中安装yum中没有的软件包
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E5%9C%A8centos7%E4%B8%AD%E9%85%8D%E7%BD%AEwebsockets%EF%BC%88libwebsockets%EF%BC%89/">
+                     
+										    在Centos7中配置websockets（libwebsockets）
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E5%AE%89%E8%A3%85kali-linux/">
+                     
+										    安装kali-Linux
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1vps%E5%BC%82%E5%B8%B8/">
+                     
+										    记录一次vps异常
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										02 软件
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/altiumdesigner%E5%85%A5%E9%97%A8%E8%AE%B0%E5%BD%95/">
+                     
+										    AltiumDesigner入门记录
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/audition%E9%99%8D%E5%99%AA%EF%BC%88%E6%B6%88%E9%99%A4%E5%99%AA%E9%9F%B3%EF%BC%89%E5%92%8C%E5%8E%BB%E9%99%A4%E6%9D%82%E9%9F%B3/">
+                     
+										    Audition降噪（消除噪音）和去除杂音
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/audition%E9%9F%B3%E9%A2%91%E5%8F%98%E9%80%9F%E5%A4%84%E7%90%86/">
+                     
+										    Audition音频变速处理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/latex/">
+                     
+										    LaTex
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/markdowm%E4%B8%AD%E9%AB%98%E4%BA%AE%E4%BB%A3%E7%A0%81%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/">
+                     
+										    Markdowm中高亮代码块的使用
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/photoshop%E6%89%B9%E9%87%8F%E6%B7%BB%E5%8A%A0%E6%97%B6%E9%97%B4%E6%B0%B4%E5%8D%B0%E7%9A%84%E6%96%B9%E6%B3%95/">
+                     
+										    PhotoShop批量添加时间水印的方法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/word-of-mac-office365-%E5%BD%BB%E5%BA%95%E5%88%A0%E9%99%A4endnote%E6%8F%92%E4%BB%B6/">
+                     
+										    Word of Mac(Office365)彻底删除Endnote插件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E4%BD%BF%E7%94%A8youtube-dl%E7%9A%84%E5%B0%8F%E6%8A%80%E5%B7%A7/">
+                     
+										    使用youtube-dl的小技巧
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E5%85%B3%E4%BA%8Effmpeg%E8%BD%AC%E7%A0%81%E7%9A%84%E4%B8%80%E7%82%B9%E6%83%B3%E6%B3%95/">
+                     
+										    关于FFmpeg转码的一点想法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E6%B5%8B%E8%AF%95%E5%85%AC%E5%BC%8F/">
+                     
+										    测试公式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E6%B5%8B%E8%AF%95%E7%BD%91%E6%98%93%E4%BA%91%E5%A4%96%E9%93%BE%E6%92%AD%E6%94%BE%E5%99%A8/">
+                     
+										    测试网易云外链播放器
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										03 有限元
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E6%9C%89%E9%99%90%E5%85%83%E5%88%86%E6%9E%90-cae/">
+                     
+										    有限元分析/CAE
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/hypermesh/">
+                     
+										    hypermesh
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E6%9C%89%E9%99%90%E5%85%83%E5%88%86%E6%9E%90-cae/">
+                     
+										    有限元分析/CAE
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0/">
+                     
+										    计算机操作笔记
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										06 硬件
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										01 MicroPython
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/micropython-%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
+                     
+										    micropython  网络基础
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E6%B5%8B%E8%AF%95micropython%EF%BC%88esp8266%EF%BC%89%E4%B8%8Emqtt%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E8%BF%9E%E6%8E%A5/">
+                     
+										    测试MicroPython（ESP8266）与MQTT服务器的连接
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										02 RaspberryPi
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/mosquitto-%E6%93%8D%E4%BD%9C%E9%80%89%E9%A1%B9/">
+                     
+										    mosquitto 操作选项
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/wpa-supplicant-conf-%E9%85%8D%E7%BD%AE/">
+                     
+										    wpa_supplicant.conf 配置
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E6%A0%91%E8%8E%93%E6%B4%BElinux%E6%97%A0%E6%B3%95%E7%9B%B4%E6%8E%A5%E5%90%AF%E5%8A%A8%E6%8F%90%E7%A4%BAgive-root-password-for-maintenance/">
+                     
+										    树莓派linux无法直接启动提示Give-root-password-for-maintenance
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E4%B8%8Esht30/">
+                     
+										    树莓派与SHT30
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91-raspberry%E5%AE%98%E6%96%B9%E7%B3%BB%E7%BB%9F/">
+                     
+										    树莓派中遇到的那些坑(raspberry官方系统)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E4%BD%BF%E7%94%A8i2c%E8%BF%9E%E6%8E%A5%E5%A4%9A%E4%B8%AA%E8%AE%BE%E5%A4%87/">
+                     
+										    树莓派使用i2c连接多个设备
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E6%A0%91%E8%8E%93%E6%B4%BE%EF%BC%881%EF%BC%89/">
+                     
+										    树莓派（1）
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E6%A0%91%E8%8E%93%E6%B4%BE%EF%BC%88linux%EF%BC%89%E9%9D%99%E6%80%81ip%E5%9C%B0%E5%9D%80%E8%AE%BE%E7%BD%AE192-168-6-66-24-%E6%88%91%E7%9A%84%E6%A0%91%E8%8E%93%E6%B4%BE%E5%9C%B0%E5%9D%80/">
+                     
+										    树莓派（Linux）静态IP地址设置192.168.6.66/24(我的树莓派地址)
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E6%A0%91%E8%8E%93%E6%B4%BE%EF%BC%88linux%EF%BC%89%E5%AE%89%E8%A3%85mysql/">
+                     
+										    树莓派（linux）安装MySQL
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E6%B5%8B%E8%AF%95linux%E4%B8%8B%E7%94%A8%E5%8C%85%E7%AE%A1%E7%90%86%E5%AE%89%E8%A3%85%E7%9A%84mosquitto/">
+                     
+										    测试linux下用包管理安装的mosquitto
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E6%B5%8B%E8%AF%95%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85%E7%9A%84mosquitto/">
+                     
+										    测试编译安装的mosquitto
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E9%80%9A%E8%BF%87sd%E5%8D%A1%E4%B8%BA%E6%A0%91%E8%8E%93%E6%B4%BE%E9%85%8D%E7%BD%AEwifi/">
+                     
+										    通过SD卡为树莓派配置WIFI
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										07 网络
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/typecho%E8%87%B3hexo%E8%BF%81%E7%A7%BB%E8%AE%B0%E5%BD%95/">
+                     
+										    Typecho至Hexo迁移记录
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E4%B8%BA%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2ssl%E8%AF%81%E4%B9%A6%EF%BC%88%E5%B0%86http%E5%8D%87%E7%BA%A7%E4%B8%BAhttps%EF%BC%89/">
+                     
+										    为网站部署SSL证书（将http升级为https）
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E4%BD%BF%E7%94%A8-jsdelivr-%E5%8A%A0%E9%80%9F-github-pages/">
+                     
+										    使用 jsDelivr 加速 GitHub Pages
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E4%BD%BF%E7%94%A8vps%E6%90%AD%E5%BB%BAss%E5%B9%B6%E5%BC%80%E5%90%AFbbr/">
+                     
+										    使用vps搭建ss并开启BBR
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E4%BD%BF%E7%94%A8nodecache%E7%9A%84cdn%E5%8A%A0%E9%80%9Fgithub-pages/">
+                     
+										    使用nodecache的cdn加速Github Pages
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E5%AE%89%E5%85%A8%E6%8F%90%E7%A4%BA%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
+                     
+										    安全提示解决方法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E6%89%AB%E6%8F%8F%E7%AB%AF%E5%8F%A3%E8%A2%ABq%E7%9A%84%E7%BD%91%E7%AB%99/">
+                     
+										    扫描端口被Q的网站
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E6%8A%8Agridea%E9%83%A8%E7%BD%B2%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%EF%BC%81%EF%BC%81%EF%BC%81/">
+                     
+										    把Gridea部署在服务器上！！！
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E7%BB%99gridea%E7%9A%84rocky%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E5%BD%B1%E5%8D%95/">
+                     
+										    给Gridea的Rocky主题添加影单
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E7%BD%91%E7%AB%99%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BDcss%EF%BC%81%EF%BC%9F/">
+                     
+										    网站无法加载CSS！？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E9%98%B2%E6%AD%A2google-com%E5%BC%BA%E5%88%B6%E8%B7%B3%E8%BD%ACgoogle-com-hk/">
+                     
+										    防止google.com强制跳转google.com.hk
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										98 考试复习
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0/">
+                     
+										    数值分析复习
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E4%B8%8E%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E5%A4%8D%E4%B9%A0/">
+                     
+										    数理统计与随机过程复习
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E6%9C%80%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95%E5%A4%8D%E4%B9%A0/">
+                     
+										    最优化方法复习
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E6%9C%BA%E6%A2%B0%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0/">
+                     
+										    机械设计复习
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E6%9C%BA%E7%94%B5%E4%BC%A0%E5%8A%A8-%E6%A0%B9%E6%8D%AE%E8%AF%BE%E5%A0%82%E4%BB%A5%E5%8F%8A%E7%BD%91%E8%AF%BE%E6%95%B4%E7%90%86/">
+                     
+										    机电传动-根据课堂以及网课整理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E6%AD%A6%E5%99%A8%E8%A3%85%E5%A4%87%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%A4%8D%E4%B9%A0/">
+                     
+										    武器装备可靠性复习
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E6%9C%BA%E6%A2%B0%E8%AE%BE%E8%AE%A1/">
+                     
+										    机械设计
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										99 mine
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/b/">
+                     
+										    b
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/emmmmmmmm/">
+                     
+										    emmmmmmmm
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E4%BD%9C%E6%AD%BB%E7%9A%84%E4%B8%80%E5%A4%A9%EF%BC%88%E5%86%99%E7%9A%84%E7%8E%A9%E7%9A%84%EF%BC%89/">
+                     
+										    作死的一天（写的玩的）
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E5%97%AF-%E4%BB%96%E5%9B%9E%E6%9D%A5%E4%BA%86/">
+                     
+										    嗯-他回来了
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hardisonxxx.github.io/%E7%9C%8B%E5%AE%8Cdro%D0%BF%E7%9A%84%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95/">
+                     
+										    看完DROП的一些想法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+	<!-- 引入正文 -->
+	<div id="content">
+		<h1 id="article-title">
+	Python笔记
+</h1>
+<div class="article-meta">
+	
+	<span>Denglzz</span>
+	<span>2019-09-10 17:22:00</span>
+		<div id="article-categories">
+    
+		<span>Categories：</span>
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/00-编程语言/">00 编程语言</a>
+                        </i>
+                      
+                        >
+                      
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/00-编程语言/03-Python/">03 Python</a>
+                        </i>
+                      
+                    </span>
+                
+            
+    
+
+    
+		<span>Tags：</span>
+            
+    
+		</div>
+
+</div>
+
+<div id="article-content">
+	<h1 id="python">Python</h1>
+<ul>
+<li>input() ： 函数从控制台获取用户的一行输入，类似于scanf</li>
+<li>eval()：
+去掉字符串s最外侧的引号，eval（）通常和input（）函数一起使用，来获取用户输入的数字</li>
+<li>print（）： 用于输出运算结果
+<ul>
+<li>1.输出字符串和变量</li>
+<li>2.仅用于输出一个或底盘个变量</li>
+<li>3.用于混合输出字符串与变量值
+<ul>
+<li>print(&lt;输出字符串模板&gt;.format(&lt;变量1&gt;,&lt;变量2&gt;,&lt;变量3&gt;))</li>
+<li>输出字符串模板中采用{}表示一个槽位置，每个槽位置对应.format()中的一个变量</li>
+</ul></li>
+<li>print()函数输出文本时默认会在最后增加一个换行，如果不希望在最后增加这个换行，或者希望输出文本后增加其他内容，可以对print()函数的end参数进行赋值
+<ul>
+<li>print(&lt;待输出内容&gt;，end“&lt;增加的输出结尾&gt;”) ## 字符串</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="字符串的索引">字符串的索引</h3>
+<ul>
+<li>&lt;字符串或字符串变量&gt;[序号]</li>
+</ul>
+<h3 id="字符串的切片">字符串的切片</h3>
+<ul>
+<li>&lt;字符串或字符变量&gt;[N:M]</li>
+</ul>
+<h3 id="format">format()</h3>
+<ul>
+<li>&lt;模板字符串&gt;.format&lt;“逗号分隔的参数”&gt;</li>
+<li>格式控制：</li>
+</ul>
+<pre class="python"><code>&gt;&gt;&gt; "{0:-^25}".format(a)
+'----------我叫Zachary----------'</code></pre>
+<h3 id="槽中格式控制标记的字段">槽中格式控制标记的字段：</h3>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>:</th>
+<th>&lt;填充&gt;</th>
+<th>&lt;对齐&gt;</th>
+<th>&lt;宽度&gt;</th>
+<th>&lt;，&gt;</th>
+<th>&lt;.精度&gt;</th>
+<th>&lt;类型&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>引导符号</td>
+<td>用于填充的单个字符</td>
+<td>&lt;左对齐,&gt;右对齐,^居中对齐</td>
+<td>槽的设定输出宽度</td>
+<td>数字的千位分隔符，适用于整数和浮点数</td>
+<td>浮点数小数部分的精度或字符串的最大输出长度</td>
+<td>整数类型：b,c,d,o,x,X,浮点数类型：e,E,f,%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="字符串处理函数">字符串处理函数</h3>
+<ul>
+<li>len(x):返回字符串x的长度，也可以返回其他组合数据类型的元素</li>
+<li>str(x):返回任意类型x所对应的字符串</li>
+<li>chr(x):返回Unicode编码对应x对应的字符串</li>
+<li>ord(x)：返回单字符x表示的Unicode编码</li>
+<li>hex(x):返回整数x对应十六进制数的小写形式字符串</li>
+<li>oct(x):返回整数x对应八进制数的小写形式字符串</li>
+</ul>
+<h3 id="字符串处理方法">字符串处理方法</h3>
+<ul>
+<li>str.lower():返回字符串str的副本，全部小写</li>
+<li>str.upper():返回字符串str的副本，全部大写</li>
+<li>str.split(sep):返回一个列表,由str根据sep被分隔的部分构成,省略sep默认以空格分隔</li>
+<li>str.count(sub):返回sub子串出现的次数</li>
+<li>str.replace(old,new):返回字符串str的副本,所有old子串被替换为new</li>
+<li>str.center(width,fillchar):字符串居中函数,fillchar参数可选</li>
+<li>str.strip(chars):从字符串str中去掉在其左侧和右侧chars中列出的字符
+//strip:剥去</li>
+<li>str.join(iter):将iter变量的每一个元素后增加一个str字符串</li>
+</ul>
+<h2 id="程序的循环结构">程序的循环结构</h2>
+<ul>
+<li>for循环</li>
+</ul>
+<pre class="python"><code>for &lt;循环变量&gt; in &lt;遍历结构&gt;
+    &lt;语句块&gt;</code></pre>
+<ul>
+<li>range():可以指定语句块的循环次=</li>
+</ul>
+<pre class="python"><code>for &lt;循环结构&gt; in range(&lt;循环次数&gt;)
+    &lt;语句块&gt;</code></pre>
+<ul>
+<li>无限循环:while</li>
+</ul>
+<pre class="python"><code>while &lt;语句&gt;
+    &lt;语句块&gt;</code></pre>
+<ul>
+<li>循环控制:break和continue
+<ul>
+<li>break:跳出循环体</li>
+<li>continue:跳过本次循环</li>
+</ul></li>
+</ul>
+<h2 id="函数的定义">函数的定义</h2>
+<pre class="python"><code>def &lt;函数名&gt; (&lt;参数列表&gt;)
+    &lt;函数体&gt;
+    return &lt;返回值列表&gt;</code></pre>
+<h3 id="函数的使用">函数的使用</h3>
+<ol type="1">
+<li>函数定义</li>
+<li>函数调用</li>
+<li>函数执行</li>
+<li>函数返回</li>
+</ol>
+<pre class="python"><code>print(&lt;函数名&gt;(&lt;参数列表&gt;))</code></pre>
+<h3 id="函数的参数传递">函数的参数传递</h3>
+<pre class="python"><code>def &lt;函数名&gt;(&lt;非可选参数列表&gt;,&lt;可选参数&gt; = &lt;默认值&gt;)
+    &lt;函数体&gt;
+    return &lt;返回值列表&gt;</code></pre>
+<h3 id="变量的作用域">变量的作用域</h3>
+<ul>
+<li>全局变量定义: global&lt;全局变量&gt;</li>
+</ul>
+<h2 id="文件">文件</h2>
+<h3 id="文件的打开和关闭">文件的打开和关闭</h3>
+<pre class="python"><code>&lt;变量名&gt; = open(&lt;文件路径及文件名&gt;,&lt;打开模式&gt;)</code></pre>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>r</th>
+<th>w</th>
+<th>x</th>
+<th>a</th>
+<th>b</th>
+<th>t</th>
+<th>+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>只读模式</td>
+<td>覆盖写模式,文件不存在则创建,存在则完全覆盖原文件</td>
+<td>创建写模式,文件不存在则创建</td>
+<td>追加写模式,文件不存在则创建,存在则在原文件最后追加内容</td>
+<td>二进制文件模式</td>
+<td>文本文件模式</td>
+<td>与r/w/x/a一同使用,在原功能基础上增加同时读写功能</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>文件使用结束后要用close()方法关闭文件,释放文件的使用授权</li>
+</ul>
+<pre class="python"><code>&lt;变量名&gt;.close()</code></pre>
+<h3 id="文件的读">文件的读</h3>
+<ul>
+<li>f.read():从文件中读入整个文件内容</li>
+<li>f.readline():从文件中读入一行内容</li>
+<li>f.readlines():从文件中读入所有行,以每行为元素形成一个列表</li>
+<li>f.seek():改变当前文件操作指针的位置,0为文件开头,2为文件结尾</li>
+</ul>
+<h3 id="文件的写">文件的写</h3>
+<ul>
+<li>f.write():向文件写入一个字符串或字节流</li>
+<li>f.writelines():讲一个元素为字符串的<strong><em>列表</em></strong>整体写入文件</li>
+</ul>
+<h3 id="一维数据的存储">一维数据的存储</h3>
+<ul>
+<li>xxx.csv : 一种通用的,相对简单的文件格式</li>
+</ul>
+<pre class="python"><code>#coding=utf-8
+ls = ['北京','上海','天津','重庆']
+f = open("city.csv","w+")
+f.write(",".join(ls)+"\n")
+f.close</code></pre>
+<h3 id="一维数据的处理">一维数据的处理</h3>
+<pre class="python"><code>f = open("/Users/denglinzhe/Desktop/city.csv","r+")
+ls = f.read().strip('\n').split(',')
+f.close()
+print(ls)
+</code></pre>
+<h3 id="二维数据的存储">二维数据的存储</h3>
+<pre class="python"><code>#coding=utf-8
+
+# ls代表二维列表,此处省略
+f = open("xxx.csv","w+")
+for row in ls:
+    f.write(",".join(row)+"\n")
+f.close()
+</code></pre>
+<h3 id="二维数据的处理">二维数据的处理</h3>
+<h4 id="从csv文件读入数据的方法">从CSV文件读入数据的方法</h4>
+<pre class="python"><code>f = open("xxx.csv","r+")
+ls = []
+for line in f:
+    ls.append(line.strip('\n').split(','))</code></pre>
+<h4 id="二维列表的操作">二维列表的操作</h4>
+<pre class="python"><code>#coding=utf-8
+
+#此处省略去从CSV获取到二维列表ls
+
+for row in ls:
+    line = ""
+    for item in row:
+        line += "{:10}\t".format(item)
+    print(line)
+</code></pre>
+<h2 id="一些要点">一些要点</h2>
+<ol type="1">
+<li>“#” #表示Python中的注释</li>
+<li>\n 换行符</li>
+<li>BIF == Built-in functions</li>
+<li>python与大多数计算机计算机语言的做法稍有不同，它并不是把值存储在变量中，而更像是把名字贴在值的上边</li>
+<li>要给一行特殊符号自动加转译符号“\” 给字符串前加r
+<code>srt = r"C:\Desktop"</code></li>
+<li>保持格式原样换行格式输出字符串：将字符串用“”“…”“” 或
+’’‘…’’’括起来</li>
+<li>python中and运算符 ： 同真为真，有假则假。</li>
+</ol>
+<h2 id="基本数据类型">基本数据类型</h2>
+<p>6个</p>
+<ol type="1">
+<li>Number</li>
+<li>String</li>
+<li>List（列表）</li>
+<li>Tuple（元组）</li>
+<li>Sets（集合）</li>
+</ol>
+<h2 id="dictionaries字典">Dictionaries（字典）</h2>
+<h3 id="number">Number</h3>
+<ul>
+<li><p>int、float、bool、complex（复数）</p></li>
+<li><p>内置type()函数可以用来查询变量所指的对象类型
+<code>python &gt;&gt;&gt; i=2 &gt;&gt;&gt; print(type(i)) &lt;class 'int'&gt;</code>
+注意：</p></li>
+<li><p>python可以同时为多个变量赋值，如a,b=1,2</p></li>
+<li><p>数值的除法（/）总是会返回一个浮点数，要获取整数使用（//）操作符</p></li>
+<li><p>在混合计算时，Python会把整形转换为浮点数</p></li>
+</ul>
+<h3 id="string">String</h3>
+<ul>
+<li>Python中的字符串用单引号或双引号括起来，同时使用反斜杠()转义特殊字符</li>
+<li>如果不想让反斜杠发生转义，可以在字符串前面加一个r，表示原始字符串
+<code>srt = r"C:\Desktop"</code></li>
+<li>字符串可以使用+运算符 串连接在一起，或者用*运算符重复 运算
+<code>python &gt;&gt;&gt; print('str'+'ing', 'my'*3) string mymymy</code></li>
+<li>python中的字符串有两种索引方式，第一种是从左往右，从0开始依次增加；第二种是从右往左，从-1开始依次减少。</li>
+<li>注意：没有单独的字符类型，一个字符就是长度为1的字符串</li>
+</ul>
+<pre class="py"><code>   &gt;&gt;&gt; word = 'Python'
+    &gt;&gt;&gt; print(word[0], word[5])
+    P n
+    &gt;&gt;&gt; print(word[-1], word[-6])
+    n P</code></pre>
+<ul>
+<li>还可以对字符串进行切片，获取一段子串。用冒号分割两个索引，形式为变量[头下标：尾下标]
+截取的范围是前闭后开的，并且两个索引都可以省略。</li>
+</ul>
+<pre class="py"><code>    &gt;&gt;&gt; word = 'ilovepython'
+    &gt;&gt;&gt; word[1:5]
+    'love'
+    &gt;&gt;&gt; word[:]
+    'ilovepython'
+    &gt;&gt;&gt; word[5:]
+    'python'
+    &gt;&gt;&gt; word[-10:-6]
+    'love'</code></pre>
+<ul>
+<li>与c语言中字符串不同的是，python字符串不能被改变。向一个索引位置赋值，会报错
+比如 <code>word[0]='m'</code> ,会导致错误。</li>
+</ul>
+<p>注意：</p>
+<ol type="1">
+<li>Python可以同时为多个变量赋值，如a, b = 1, 2。</li>
+<li>一个变量可以通过赋值指向不同类型的对象。</li>
+<li>数值的除法（/）总是返回一个浮点数，要获取整数使用//操作符。</li>
+<li>在混合计算时，Pyhton会把整型转换成为浮点数。</li>
+</ol>
+<h3 id="list列表">List（列表）</h3>
+<ul>
+<li>List是python中使用最频繁的数据类型</li>
+<li>列表是写在方括号之间、用逗号分隔开的元素列表，列表中的元素类型可以不相同：</li>
+</ul>
+<pre class="py"><code>&gt;&gt;&gt; a = ['him', 25, 100, 'her']
+&gt;&gt;&gt; print(a)
+['him', 25, 100, 'her']</code></pre>
+<ul>
+<li>和字符串一样，列表同样可以被索引和切片，列表被切片后返回一个包含所元素的新列表</li>
+<li>列表还支持串联操作，使用+操作符</li>
+</ul>
+<pre class="py"><code>&gt;&gt;&gt; a = [1, 2, 3, 4, 5]
+    &gt;&gt;&gt; a + [6, 7, 8]
+    [1, 2, 3, 4, 5, 6, 7, 8]</code></pre>
+<p>列表索引类似于字符串的索引</p>
+<ul>
+<li>列表中的元素是可以改变的，与Python中的字符串不一样</li>
+</ul>
+<pre class="py"><code>&gt;&gt;&gt; a = [1, 2, 3, 4, 5, 6]
+    &gt;&gt;&gt; a[0] = 9
+    &gt;&gt;&gt; a[2:5] = [13, 14, 15]
+    &gt;&gt;&gt; a
+    [9, 2, 13, 14, 15, 6]
+    &gt;&gt;&gt; a[2:5] = []   # 删除
+    &gt;&gt;&gt; a
+    [9, 2, 6]</code></pre>
+<p>注意：</p>
+<ol type="1">
+<li>List写在方括号之间，元素用逗号隔开。</li>
+<li>和字符串一样，list可以被索引和切片。</li>
+<li>List可以使用+操作符进行拼接。</li>
+<li>List中的元素是可以改变的。</li>
+</ol>
+<h3 id="tuple元组">Tuple（元组）</h3>
+<ul>
+<li>元组（Tuple）与列表类似，不同之处在于元组不能修改，元组写在小括号里，元素之间用逗号隔开，元组中的元素类型也不相同：</li>
+</ul>
+<pre class="py"><code>    &gt;&gt;&gt; a = (1991, 2014, 'physics', 'math')
+    &gt;&gt;&gt; print(a, type(a), len(a))
+    (1991, 2014, 'physics', 'math') &lt;class 'tuple'&gt; 4
+    </code></pre>
+<ul>
+<li>元组与字符串类似，可以被索引且下标索引从0开始，也可以进行截取/切片</li>
+<li>可以把字符串看做一种特殊的元组</li>
+</ul>
+<pre class="py"><code>    &gt;&gt;&gt; tup = (1, 2, 3, 4, 5, 6)
+    &gt;&gt;&gt; print(tup[0], tup[1:5])
+    1 (2, 3, 4, 5)</code></pre>
+<ul>
+<li>虽然tuple的元素不可改变，但它可以包含可变的对象，比如list列表</li>
+<li>构造包含0个或1个元素的tuple是个特殊的问题，所以有一些额外的语法规则</li>
+</ul>
+<pre class="py"><code>    &gt;&gt;&gt; tup1 = () # 空元组
+    &gt;&gt;&gt; tup2 = (20,) # 一个元素，需要在元素后添加逗号
+    &gt;&gt;&gt; type(tup2)
+    &lt;class 'tuple'&gt;
+    &gt;&gt;&gt; tup3=(20)
+    &gt;&gt;&gt; type(tup3)
+    &lt;class 'int'&gt;</code></pre>
+<ul>
+<li>元组也支持用 + 操作符：</li>
+</ul>
+<pre class="py"><code>    &gt;&gt;&gt; tup1, tup2 = (1, 2, 3), (4, 5, 6)
+    &gt;&gt;&gt; print(tup1+tup2)
+    (1, 2, 3, 4, 5, 6)</code></pre>
+<ul>
+<li>string、list和tuple都属于sequence（序列）</li>
+</ul>
+<p>注意：</p>
+<ol type="1">
+<li>与字符串一样，元组的元素不能修改。</li>
+<li>元组也可以被索引和切片，方法一样。</li>
+<li>注意构造包含0或1个元素的元组的特殊语法规则。</li>
+<li>元组也可以使用+操作符进行拼接。</li>
+</ol>
+<h3 id="sets集合">Sets(集合)</h3>
+<ul>
+<li>集合(Set)是一个无序不重复元素的集。</li>
+<li>基本功能是进行成员关系测试和消除重复元素。</li>
+<li>可以使用大括号或者set()函数创建set集合。</li>
+<li>注意：创建一个空集合必须用set()而不是{},因为{}是用来创建一个空字典的。</li>
+</ul>
+<pre class="py"><code>    &gt;&gt;&gt; student = {'Tom', 'Jim', 'Mary', 'Tom', 'Jack', 'Rose'}
+    &gt;&gt;&gt; print(student)   # 重复的元素被自动去掉
+    {'Jim', 'Jack', 'Mary', 'Tom', 'Rose'}
+    &gt;&gt;&gt; 'Rose' in student  # membership testing（成员测试）
+    True
+    &gt;&gt;&gt; # set可以进行集合运算
+    ... 
+    &gt;&gt;&gt; a = set('abracadabra')
+    &gt;&gt;&gt; b = set('alacazam')
+    &gt;&gt;&gt; a
+    {'a', 'b', 'c', 'd', 'r'}
+    &gt;&gt;&gt; a - b     # a和b的差集
+    {'b', 'd', 'r'}
+    &gt;&gt;&gt; a | b     # a和b的并集
+    {'l', 'm', 'a', 'b', 'c', 'd', 'z', 'r'}
+    &gt;&gt;&gt; a &amp; b     # a和b的交集
+    {'a', 'c'}
+    &gt;&gt;&gt; a ^ b     # a和b中不同时存在的元素
+    {'l', 'm', 'b', 'd', 'z', 'r'}</code></pre>
+<h3 id="dictionaries字典-1">Dictionaries(字典)</h3>
+<ul>
+<li>字典是python中另一个非常有用的内置数据类型。</li>
+<li>字典是一种映射类型(mapping type),他是一个无序的键：值对集合。</li>
+<li>关键词必须使用不可变类型，也就是说list和包含可变类型的tuple不能做关键字。</li>
+<li>在同一个字典中，关键字还必须互不相同</li>
+</ul>
+<pre class="py"><code>  &gt;&gt;&gt; dic = {}  # 创建空字典
+  &gt;&gt;&gt; tel = {'Jack':1557, 'Tom':1320, 'Rose':1886}
+  &gt;&gt;&gt; tel
+  {'Tom': 1320, 'Jack': 1557, 'Rose': 1886}
+  &gt;&gt;&gt; tel['Jack']   # 主要的操作：通过key查询
+  1557
+  &gt;&gt;&gt; del tel['Rose']  # 删除一个键值对
+  &gt;&gt;&gt; tel['Mary'] = 4127  # 添加一个键值对
+  &gt;&gt;&gt; tel
+  {'Tom': 1320, 'Jack': 1557, 'Mary': 4127}
+  &gt;&gt;&gt; list(tel.keys())  # 以list形式返回所有的key
+  ['Tom', 'Jack', 'Mary']
+  &gt;&gt;&gt; sorted(tel.keys()) # 按key排序
+  ['Jack', 'Mary', 'Tom']
+  &gt;&gt;&gt; 'Tom' in tel       # 成员测试
+  True
+  &gt;&gt;&gt; 'Mary' not in tel  # 成员测试
+  False
+  </code></pre>
+<ul>
+<li>构造函数dict()直接从键值对sequence中构造字典，推导如下：</li>
+</ul>
+<pre class="py"><code>    &gt;&gt;&gt; dict([('sape', 4139), ('guido', 4127), ('jack', 4098)])
+    {'jack': 4098, 'sape': 4139, 'guido': 4127}
+    
+    &gt;&gt;&gt; {x: x**2 for x in (2, 4, 6)}
+    {2: 4, 4: 16, 6: 36}
+    
+    &gt;&gt;&gt; dict(sape=4139, guido=4127, jack=4098)
+    {'jack': 4098, 'sape': 4139, 'guido': 4127}</code></pre>
+<p>注意：</p>
+<ol type="1">
+<li>字典是一种映射类型，它的元素是键值对。</li>
+<li>字典的关键字必须为不可变类型，且不能重复。</li>
+<li>创建空字典使用{ }。</li>
+</ol>
+<h2 id="python3解释器">Python3解释器</h2>
+<ul>
+<li>交互式编程</li>
+<li>脚本式编程</li>
+</ul>
+<h2 id="python3注释">Python3注释</h2>
+<p>单行注释 开头加 #</p>
+<pre class="python"><code># print(hallo,python)</code></pre>
+<p>多行注释 ’’’…’’’ 或 “““…”“”</p>
+<pre class="python"><code>print(hallo,python)
+print(hallo,python)
+print(hallo,python)
+
+或
+
+"""
+print(hallo,python)
+print(hallo,python)
+print(hallo,python)
+"""</code></pre>
+<h2 id="python3运算符">Python3运算符</h2>
+<h3 id="算数运算符">算数运算符</h3>
+<pre class="python"><code>+
+-
+*
+/
+%
+** # a**b 幂_返回x的y次幂
+// # 取整除_返回商的整数部分
+</code></pre>
+<h3 id="比较运算符">比较运算符</h3>
+<pre class="python"><code>==
+!=
+&amp;gt;
+&amp;lt;
+&amp;gt;=
+&amp;lt;=</code></pre>
+<h3 id="赋值运算符">赋值运算符</h3>
+<pre class="python"><code>=
++=
+-=
+*=
+/=
+%=
+**=
+//=</code></pre>
+<h3 id="位运算符">位运算符</h3>
+<p>按位运算符十八数字看做二进制来进行计算的，Python中的按位运算法则如下：</p>
+<pre class="py"><code>&amp; # 按位与运算符
+| # 按位或运算符
+^ # 按位异或运算符
+~ # 按位取反运算符
+&lt;&lt; #左移动运算符
+&gt;&gt;; # 右移动运算符</code></pre>
+<p>#举例</p>
+<pre class="py"><code>#!/usr/bin/python3
+#coding=utf-8
+
+a = 60            # 60 = 0011 1100
+b = 13            # 13 = 0000 1101
+c = 0
+
+c = a &amp; b;        # 12 = 0000 1100
+print ("1 - c 的值为：", c)
+
+c = a | b;        # 61 = 0011 1101
+print ("2 - c 的值为：", c)
+
+c = a ^ b;        # 49 = 0011 0001
+print ("3 - c 的值为：", c)
+
+c = ~a;           # -61 = 1100 0011
+print ("4 - c 的值为：", c)
+
+c = a &lt;&lt; 2;       # 240 = 1111 0000
+print ("5 - c 的值为：", c)
+
+c = a &gt;&gt; 2;       # 15 = 0000 1111
+print ("6 - c 的值为：", c)
+</code></pre>
+<h3 id="逻辑运算符">逻辑运算符</h3>
+<pre><code>and # 布尔“与”
+or # 布尔”或“
+not # 布尔”非“</code></pre>
+<h4 id="举例">举例</h4>
+<pre class="py"><code>#!/usr/bin/python3
+#coding=utf-8
+
+a = 10
+b = 20
+
+if ( a and b ):
+   print ("1 - 变量 a 和 b 都为 true")
+else:
+   print ("1 - 变量 a 和 b 有一个不为 true")
+
+if ( a or b ):
+   print ("2 - 变量 a 和 b 都为 true，或其中一个变量为 true")
+else:
+   print ("2 - 变量 a 和 b 都不为 true")
+
+# 修改变量 a 的值
+a = 0
+if ( a and b ):
+   print ("3 - 变量 a 和 b 都为 true")
+else:
+   print ("3 - 变量 a 和 b 有一个不为 true")
+
+if ( a or b ):
+   print ("4 - 变量 a 和 b 都为 true，或其中一个变量为 true")
+else:
+   print ("4 - 变量 a 和 b 都不为 true")
+
+if not( a and b ):
+   print ("5 - 变量 a 和 b 都为 false，或其中一个变量为 false")
+else:
+   print ("5 - 变量 a 和 b 都为 true")
+</code></pre>
+<h3 id="成员运算符">成员运算符</h3>
+<pre><code>in # 如果在指定的序列中找值返回True，否则返回False
+not in # 指定的</code></pre>
+<h4 id="举例-1">举例</h4>
+<pre class="py"><code>#!/usr/bin/python3
+#coding=utf-8
+a = 10
+b = 20
+list = [1, 2, 3, 4, 5 ];
+
+if ( a in list ):
+   print ("1 - 变量 a 在给定的列表中 list 中")
+else:
+   print ("1 - 变量 a 不在给定的列表中 list 中")
+
+if ( b not in list ):
+   print ("2 - 变量 b 不在给定的列表中 list 中")
+else:
+   print ("2 - 变量 b 在给定的列表中 list 中")
+
+# 修改变量 a 的值
+a = 2
+if ( a in list ):
+   print ("3 - 变量 a 在给定的列表中 list 中")
+else:
+   print ("3 - 变量 a 不在给定的列表中 list 中")
+   </code></pre>
+<h3 id="身份运算符">身份运算符</h3>
+<p>身份运算符为了比较两个对象的存储单元</p>
+<pre><code>is #is是判断两个标识符是不是引自同一个对象 x is y, 如果 id(x) 等于 id(y) , is 返回结果 1
+
+is not  #is not是判断两个标识符是不是引用自不同对象，x is not y, 如果 id(x) 不等于 id(y). is not 返回结果 1</code></pre>
+<pre class="py"><code>#举例
+
+#!/usr/bin/python3
+#coding=utf-8
+
+a = 20
+b = 20
+
+if ( a is b ):
+   print ("1 - a 和 b 有相同的标识")
+else:
+   print ("1 - a 和 b 没有相同的标识")
+
+if ( id(a) == id(b) ):
+   print ("2 - a 和 b 有相同的标识")
+else:
+   print ("2 - a 和 b 没有相同的标识")
+
+# 修改变量 b 的值
+b = 30
+if ( a is b ):
+   print ("3 - a 和 b 有相同的标识")
+else:
+   print ("3 - a 和 b 没有相同的标识")
+
+if ( a is not b ):
+   print ("4 - a 和 b 没有相同的标识")
+else:
+   print ("4 - a 和 b 有相同的标识")
+
+
+
+   #输出结果
+# 1 - a 和 b 有相同的标识
+# 2 - a 和 b 有相同的标识
+# 3 - a 和 b 没有相同的标识
+# 4 - a 和 b 没有相同的标识
+</code></pre>
+
+</div>
+
+
+    <div class="post-guide">
+        <div class="item left">
+            
+              <a href="/hardisonxxx.github.io/%E5%AE%89%E8%A3%85kali-linux/">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  安装kali-Linux
+              </a>
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/hardisonxxx.github.io/%E6%B5%8B%E8%AF%95%E7%BD%91%E6%98%93%E4%BA%91%E5%A4%96%E9%93%BE%E6%92%AD%E6%94%BE%E5%99%A8/">
+                测试网易云外链播放器
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+ 
+
+
+
+<script>
+	
+	
+</script>
+	</div>
+	<div id="footer">
+	<p>
+	©<span id="footerYear-start">2019</span>-<span id="footerYear-end"></span>
+	<a href="/">Denglzz</a> 
+	
+	
+	<br>
+	Theme <a href="//github.com/wujun234/hexo-theme-tree" target="_blank">Tree</a>
+	by <a href="//github.com/wujun234" target="_blank">WuJun</a>
+	Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+	</p>
+</div>
+
+
+<script type="text/javascript">
+	document.getElementById('footerYear-end').innerHTML = new Date().getFullYear() + '';
+</script>
+
+
+
+	<button id="totop-toggle" class="toggle"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+</body>
+</html>
