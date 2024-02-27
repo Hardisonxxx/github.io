@@ -1443,7 +1443,7 @@ mjx-container[display="true"] + br {
 									</a>
 									
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/hardisonxxx.github.io/%E6%9C%89%E9%99%90%E5%85%83%E5%88%86%E6%9E%90-cae/">
                      
 										    有限元分析/CAE
@@ -1465,7 +1465,7 @@ mjx-container[display="true"] + br {
 							</ul>
 			
 							<ul>
-								<li class="file active">
+								<li class="file">
 									<a href="/hardisonxxx.github.io/%E6%9C%89%E9%99%90%E5%85%83%E5%88%86%E6%9E%90-cae/">
                      
 										    有限元分析/CAE
@@ -1995,79 +1995,7 @@ mjx-container[display="true"] + br {
 </div>
 
 <div id="article-content">
-	<h1 id="有限元分析介绍">有限元分析介绍</h1>
-<h2 id="分析类型">分析类型</h2>
-<p>CAE(Computer Aided
-Engineering)的全称为计算机辅助工程，一般包含以下的分析类型</p>
-<h3 id="线性静态分析">线性静态分析</h3>
-<p>力会恒定施加（与时间无关），元件发生变形后力依然施加，不会受到元件的影响。</p>
-<h3 id="非线性分析">非线性分析</h3>
-<p><img src="https://blog-denglinzhe-com.oss-cn-chengdu.aliyuncs.com/img/image-20231108102346815.png"></p>
-<p><img src="https://blog-denglinzhe-com.oss-cn-chengdu.aliyuncs.com/img/image-20231108103243801.png"></p>
-<ul>
-<li>非线性材料：力（应力）vs.位移（应变）曲线是非线性的（多项式拟合）。</li>
-<li>几何非线性：现实生活中，刚度[K]是位移[d]的函数(线性分析中[K]是不变的，独立于[d])这意味着在几何非线性分析中，在预定义的位移后，刚度矩阵
-K 需要重新计算)。</li>
-<li>接触非线性：在接触分析中，当部件进入接触或分离，刚度矩阵 K
-是位移的函数。</li>
-<li>在线性静力分析中使用的是工程应力和应变，而非线性分析中使用真实应力和应变。</li>
-</ul>
-<h3 id="动力学分析">动力学分析</h3>
-<p><img src="https://blog-denglinzhe-com.oss-cn-chengdu.aliyuncs.com/img/image-20231108104803890.png"></p>
-<h3 id="屈曲分析">屈曲分析</h3>
-<p>belike：</p>
-<p><img src="https://blog-denglinzhe-com.oss-cn-chengdu.aliyuncs.com/img/image-20231108133138611.png"></p>
-<p>软件计算输出结果：负载的临界值 。</p>
-<h3 id="热分析">热分析</h3>
-<p>目前不接触</p>
-<h3 id="疲劳分析">疲劳分析</h3>
-<p>在材料学中，当载荷循环作用在材料时，结构损伤中逐步发生疲劳现象。</p>
-<p>疲劳发生在载荷反复加载和卸载作用在材料时。如果载荷超过特定阈值，表面微观裂缝会开始形成。最终的
-裂缝将达到一个临界尺寸，结构会突然断裂。</p>
-<h3 id="优化">优化</h3>
-<p><img src="https://blog-denglinzhe-com.oss-cn-chengdu.aliyuncs.com/img/image-20231108133700153.png"></p>
-<p>实际应用：适用于任何已经结束或正在设计的部件。</p>
-<h3 id="计算流体力学">计算流体力学</h3>
-<p>目前不接触</p>
-<h3 id="碰撞分析">碰撞分析</h3>
-<p>目前不接触</p>
-<h3 id="振动噪声和平顺性nvh分析">振动、噪声和平顺性（NVH）分析</h3>
-<p>目前不接触</p>
-<h2 id="有限元分析基本原理">有限元分析基本原理</h2>
-<p><img src="https://blog-denglinzhe-com.oss-cn-chengdu.aliyuncs.com/img/image-20231108150458350.png"></p>
-<h3 id="数值计算方法">数值计算方法</h3>
-<ul>
-<li>有限元法（FEM）：有限元法是最广泛的计算方法。应用：线性分析、非线性分析、屈曲分析、热分析、动态分析和疲劳分析等。FEA是有限元分析，主要用在高校科研。</li>
-<li>边界元法（BEM）：这种强大的解析法能够高效地解决声学分析或 NVH
-问题。和有限元法一样需要<strong>节点</strong>和<strong>单元</strong>，但它只参考域的外边界。所以当求解对象是一个体时，只考虑最外表面。如果属于一个区域，只参考最外围。这样，
-通过降低一个维数而更快速地解决问题。</li>
-<li>有限体积法(FVM)：大部分的计算流体动力学(CFD)软件都是基于有限体积法。有限体积法只参考单位体积（同有限元分析中的单元相似）。节点上的变量属性包括压力、速度、面积、质量等，是基于二维Navier
-- Stokes 方程（质量、动量和能量守恒平衡方程）。</li>
-<li>有限差分法(FDM)：有限元法和有限差分法有很多相似之处。通常有限差分法是指<strong>求解微分方程的一种方法</strong>。它使用
-Taylor
-级数将微分方程转换为代数方程，在转换过程中忽略高阶项。与边界元分析或有限体积法结合来解决热学分析和计算流体动力学耦合问题。</li>
-</ul>
-<h3 id="离散化问题">离散化问题</h3>
-<p>现实生活中所有的对象都是连续的。也就是说，任意两个连续的粒子之间没有物理缺口。</p>
-<p>根据材料学，任何物体都是由粒子、粒子的原子、原子的分子等构成，在吸引力的作用下结合在一起。</p>
-<p>解决一个现实中连续材料的问题是很困难的。</p>
-<p>所以，数值计算法的基础是以离散化（非连续）来简化问题。</p>
-<p><img src="https://blog-denglinzhe-com.oss-cn-chengdu.aliyuncs.com/img/image-20231108163139230.png"></p>
-<p><img src="https://blog-denglinzhe-com.oss-cn-chengdu.aliyuncs.com/img/image-20231108163155446.png"></p>
-<h3 id="有限元法">有限元法</h3>
-<p>有限元法是一种数值计算法、一个实际问题的数学体现、近似法。</p>
-<ul>
-<li><p>有限：任何一个连续的对象都有无限个自由度，在这种情况下是无法解决问题的。通过离散化和建立网格
-（节点和单元），有限元法把无限个降低到有限个自由度。</p></li>
-<li><p>单元：所有的计算都在有限数量的点即节点进行。加入节点形成一个特定形状的实体，例如三角形或四边形，被称为单元。在任意计算点之间，会根据单元的形状运用插值函数获得一个变量的值（如位移）。</p></li>
-<li><p>方法：所有的工程问题都可以用 3
-种方法解决（解析法、数值计算法、实验法）。有限元分析属于数值计算法。</p></li>
-</ul>
-<p>通常情况下，描述物体的节点（单元）数量越多，其精确度也会增加，举例如下。</p>
-<p>我们需要使用“节点（单元）”描述一个圆。</p>
-<p><img src="https://blog-denglinzhe-com.oss-cn-chengdu.aliyuncs.com/img/image-20231109135646940.png"></p>
-<p>当然，通过增加线条可以实现误差范围的减少；直线的数量可看作有限元分析中单元的数量。但单元的数量与计算时间成正比。需结合现有硬件资源，在期望精确度和能够处理的单元尺寸、数量之间获得平衡。</p>
-<h4 id="有限元法的优势结果可视化">有限元法的优势：结果可视化</h4>
+	
 
 </div>
 
