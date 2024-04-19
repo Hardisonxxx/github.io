@@ -2033,6 +2033,25 @@ mjx-container[display="true"] + br {
 <h1 id="第0章-操作中遇到的问题">第0章 操作中遇到的问题</h1>
 <ol type="1">
 <li>在导入三维模型后，会遇到三维模型边角面显示不光滑。这不是三维文件的问题，而是ANSA分辨率的问题。只需要使用<code>TOPO&gt;Auxiliaries&gt;Fine</code>操作将不光滑的边界多次点击之后即可改变其分辨率从而达到显示光滑的效果。</li>
+<li>圆孔在画网格时，边缘线条只能是偶数个</li>
+<li></li>
+</ol>
+<h2 id="处理详细步骤">处理详细步骤</h2>
+<ol type="1">
+<li>将几何中一些<strong>没有必要的线</strong>删除掉</li>
+<li>将一些焊点隐藏掉。（使用PID）</li>
+<li>对钣金件抽中面（其他件如果需要的话）</li>
+<li>按照零件逐一画网格。使用mesh模块。
+<ol type="1">
+<li>使用Geometry进行几何检查</li>
+<li>切换到mesh界面进行网格划分
+<ol type="1">
+<li>在length修改网格尺寸</li>
+<li>使用simplify进行网格清理</li>
+<li>使用free画网格</li>
+</ol></li>
+<li>进行网格修复</li>
+</ol></li>
 </ol>
 <h1 id="第1章-设置操作相关">第1章 设置、操作相关</h1>
 <h2 id="操作">1.1 操作</h2>
@@ -2559,7 +2578,7 @@ macros</h2>
 <h4 id="reconstruct">Reconstruct</h4>
 <p>固定一部分网格的节点或边界，然后重新绘制网格，绘制过程中，固定的网格边界或节点不会发生变化。</p>
 <p>可以在Option List里面设置重新生成网格的大小及质量检查标准等。</p>
-<h4 id="reshape">ReShape</h4>
+<h4 id="resha-pe">ReSha pe</h4>
 <p>会通过破坏原始几何以修复网格（重新shape），破坏程度要大于Reconstruct，同样修复能力也大于Reconstruct、</p>
 <h4 id="smooth光滑的和fix-quality">Smooth（光滑的）和Fix Quality</h4>
 <p>不对网格本身进行修改，是通过移动节点的位置对整体网格质量进行修改。</p>
@@ -2567,6 +2586,44 @@ macros</h2>
 <p>Fix Quality这是将网格修改至大于最低标准即可</p>
 <p>Smooth在修改时会参考Perineters（周长or边界）来进行修改，修改效果优于Fix
 Quality</p>
+<h3 id="shell-mesh-对壳单元网格进行操作">Shell mesh
+（对壳单元网格进行操作）</h3>
+<h4 id="fill">Fill</h4>
+<p>填充</p>
+<p>Manual生成网格的效果优于其他</p>
+<h4 id="volumizing实体单元">Volumizing（实体单元）</h4>
+<p>给壳单元添加厚度，将其变成体网格</p>
+<h4 id="intersection">intersection</h4>
+<h4 id="project-3">Project</h4>
+<p>投影，将Hot Point投影至面网格上。</p>
+<h4 id="refine">refine</h4>
+<p>改进网格</p>
+<h4 id="zone-cut-1">Zone Cut</h4>
+<p>在一个区域内，进行切割。切割后网格同时也进行了响应的生成。</p>
+<h4 id="plane-cut-2">plane cut</h4>
+<p>切割整个切面，进而切割网格。切割后网格同时也进行了响应的生成。</p>
+<h4 id="collapse">Collapse</h4>
+<p>调节畸形网格单元，将小于阈值的网格修复，使其规整。</p>
+<h3 id="elements网格">Elements（网格）</h3>
+<p>如果release释放网格后，只能通过<code>Elements</code>来进行操作了。
+（脱离了link关系）</p>
+<h4 id="split">Split</h4>
+<p>劈分网格。</p>
+<p>#### Swap</p>
+<p>改变上面Split的劈开方向</p>
+<h4 id="new-2">New</h4>
+<p>选择几条Edge去生成网格，通常情况下，用New生成一两个网格即可，大范围补网格还是用Fill好点。</p>
+<h4 id="stitch">Stitch</h4>
+<p>通过指定三个点，来生成网格。</p>
+<h4 id="to-surface">To Surface</h4>
+<p>将网格转换成几何。</p>
+<h4 id="extrude-1">Extrude</h4>
+<p>拉伸。比如说给圆管Tube画网格，</p>
+<p>里面有两个子选项，<code>Glide</code>和<code>Sweep</code>，Glide用一条线做引导线。sweep用两条线，通常来说sweep的效果优于Glide。针对一些曲率过大的圆管弯曲处，使用Glide可能会导致其呈扁状。</p>
+<h4 id="vol-shell">vol shell</h4>
+<p>针对三维的体网格生成壳单元。</p>
+<h4 id="penetration">Penetration</h4>
+<p>检查网格间是否有穿透</p>
 
 </div>
 
